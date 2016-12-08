@@ -20,7 +20,9 @@ public:
     std::vector<float>NET_for_hidden_layer;
     std::vector<float>Activation_for_last_layer;
     std::vector<float>Activation_for_hidden_layer;
-    std::vector<float>&SumOfLastErrors();
+    std::vector<float>NET_for_first_layer;
+    std::vector<float>Activation_for_first_layer;
+    std::vector<float>SumOfLastErrors();
     void SetInputValue(std::vector<float>image);
     void SetOutputValue(std::vector<float>image);
     void CountingLayersActivation();
@@ -31,6 +33,7 @@ public:
     void CountingError();
     void ChangingWeights();
     bool EndOfLearning();
+    void Clear();
     NeuralNetwork(std::vector<int>number_of_neurons);
     ~NeuralNetwork();
 };

@@ -9,7 +9,7 @@ private:
 public:
     Layer(int number_of_neurons, int number_of_weights);
     int GetNumberOfNeurons();
-    std::vector<neuron> GetNeurons();
+    std::vector<neuron> &GetNeurons();
     ~Layer();
 };
 

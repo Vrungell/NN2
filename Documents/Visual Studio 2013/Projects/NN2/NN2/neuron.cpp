@@ -32,9 +32,10 @@ void neuron::SetBias(float value){
 
 float neuron::CountingNET(std::vector<float>input_values){
     float sum = 0;
-    for (int i = 0; i < number_of_neurons_previous; i++)
-        sum = sum + weights[i]*input_values[i];
-    return sum;
+    if (number_of_neurons_previous != 0)
+        for (int i = 0; i < input_values.size(); i++)
+            sum = sum + weights[i] * input_values[i];
+        return sum;
 }
 
 float neuron::CountingActivation(std::vector<float>input_values){

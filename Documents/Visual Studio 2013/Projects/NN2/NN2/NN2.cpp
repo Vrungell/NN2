@@ -29,14 +29,15 @@ int _tmain(int argc, _TCHAR* argv[])
     std::vector<float>image;
     std::vector<float>output;
     while (neural_network.EndOfLearning() == false){
-        if (i == values.size()) i = 0;
+        if (i == values.size()-1) i = 0;
         image.push_back(values[i]);
         i++;
         output.push_back(sin(values[i]));
         neural_network.Learning(image, output);
-        std::cout << neural_network.Activation_for_last_layer[0] << std::endl;
+        std::cout <<values[i]<<" " << neural_network.Activation_for_last_layer[0] << std::endl;
         image.clear();
         output.clear();
+        neural_network.Clear();
     }
 	return 0;
 }
